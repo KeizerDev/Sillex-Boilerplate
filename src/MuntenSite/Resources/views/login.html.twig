@@ -1,0 +1,18 @@
+{% extends "layouts/base.html.twig" %}
+
+{% block munten %}
+        <div class="container-fluid page-container login-container">
+            <div class="login-wrapper">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error|nl2br }}</div>
+                {% endif %}
+                <form action="{{ app.url_generator.generate('login_check') }}" method="post">
+                    <label class="input-label login-label" for="username">Gebruikersnaam</label>
+                    <input id="username" name="_username" type="text" />
+                    <label class="input-label login-label" for="password">Wachtwoord</label>
+                    <input id="password" name="_password" type="password" />
+                    <input type="submit" value="login">
+                </form>
+            </div>
+        </div>
+{% endblock %}

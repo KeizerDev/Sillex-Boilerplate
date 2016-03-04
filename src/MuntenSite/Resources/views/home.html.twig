@@ -1,0 +1,26 @@
+{% extends "layouts/base.html.twig" %}
+
+
+{% block munten %}
+	{% for munt in munten %}
+        <div class="col-md-3">
+        	<div class="panel panel-default">
+                <div class="panel-body">
+                    <img src="{{munt['thumbnail']}}" />
+                    <img src="{{munt['thumbnail2']}}" />
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">{{munt['title']}}</li>
+                    <li class="list-group-item">
+                    <div class="price">
+                        &euro; {{munt['price']}}
+                    </div>
+                        <div class="cart">
+                            <a href="/munt/{{munt['id']}}"><i class="glyphicon glyphicon-shopping-cart">&nbsp;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	{% endfor %}
+{% endblock %}

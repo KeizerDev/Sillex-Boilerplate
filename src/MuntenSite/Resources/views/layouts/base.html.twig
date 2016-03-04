@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Munten</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+</head>
+<body>
+    <div class="gold-bar"></div>
+    <div class="sidebar">
+        <div class="logo">
+            <a href="/"><img src="/logo.png" height="100px"></a>
+        </div>
+        <ul>
+            {% if is_granted('ROLE_ADMIN') %}<li><a href="/admin/add">+ munt toevoegen</a></li>{% endif %}
+            {% for key,value in categories %}
+                <li><a href="/categorie/{{value.id}}">{{value.name}}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="copyright">
+            Copyright 2016 | {% if is_granted('ROLE_ADMIN') %}<a href="/admin/logout">logout</a>{% else %}<a href="/login">login</a>{% endif %}
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                {% block munten %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

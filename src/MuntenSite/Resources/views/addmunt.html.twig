@@ -1,0 +1,45 @@
+{% extends "layouts/base.html.twig" %}
+
+{% block munten %}
+    <div class="col-md-6">
+        <form class="container-fluid" action="/admin/add" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="naamMunt">Naam</label>
+                <input type="text" class="form-control" id="naamMunt" name="title" placeholder="Naam">
+            </div>
+            <div class="form-group">
+                <label for="description">Omschrijving</label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="afbeelding1">Afbeelding 1</label>
+                    <input type="file" id="afbeelding1" name="thumbnail">
+                    <p class="help-block">Selecteer een afbeelding om te gebruiken voor de munt.</p>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="afbeelding2">Afbeelding 2</label>
+                    <input type="file" id="afbeelding2" name="thumbnail2">
+                    <p class="help-block">Selecteer een afbeelding om te gebruiken voor de munt.</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="categories">Categorieën</label>
+                <select class="form-control" id="categories" name="categorie">
+                {% for key,value in categories %}
+                    <option value="{{value.id}}">{{value.name}}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                &euro; <input type="number" name="euro" min="0" >,<input type="number" name="cent" min="0" max="99">
+            </div>
+            <button type="submit" class="btn btn-default">Voeg toe</button>
+        </form>
+    </div>
+    {# Naam: </br> #}
+    {# Thumbnail: {{thumbnail}}</br> #}
+    {# thumbnail: {{thumbnail2}}</br> #}
+    {# Sourcetype: {{description}}</br> #}
+    {# commentsID: {{price}}</br> #}
+{% endblock %}

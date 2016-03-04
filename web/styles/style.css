@@ -1,0 +1,133 @@
+body {
+	padding: 0;
+	margin: 0;
+    background: #ffffff;
+}
+
+.gold-bar {
+    height: 5px;
+    background: #B59759;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.sidebar {
+    background-color: #333333;
+    width: 275px;
+    height: calc(100vh - 5px);
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 5px;
+}
+
+.sidebar .logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sidebar ul {
+    width: 100%;
+    height: calc(100% - 264px);
+    overflow: scroll;
+    bottom: 64px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    position: absolute;
+    top: 200px;
+}
+
+.sidebar ul li {
+    border-bottom: 1px #3E3D3D solid;
+    color: white;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sidebar ul li a {
+    color: white;
+}
+
+.sidebar ul li a:hover {
+    color: white;
+}
+
+.sidebar ul h3 {
+    color: white;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 11px;
+}
+
+a {
+    color: black;
+    display: block;
+}
+
+a:hover {
+    color: black;
+}
+
+.copyright {
+    bottom: 25px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    font-size: 10px;
+}
+
+.content {
+    width: calc(100vw - 275px);
+    height: calc(100vh - 5px);
+    margin-left: 275px;
+    padding-top: 45px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 45px;
+    top: 5px;
+}
+
+.list-group-item {
+    height: 40px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.list-group-item .price {
+    float: left;
+    height: 40px;
+    line-height: 20px;
+}
+
+.list-group-item .cart {
+    float: right;
+    height: 40px;
+    line-height: 20px;
+}
+
+.panel {
+    text-align: center;
+}
+
+.panel img {
+    width: 48%;
+    float: left;
+    margin-right: 4%;
+}
+.panel img:last-child {
+    margin-right: 0%;
+}
