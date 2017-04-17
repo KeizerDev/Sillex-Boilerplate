@@ -1,0 +1,31 @@
+{
+  "name": "bunq-web",
+  "description": "A web dashboard using the Bunq API.",
+  "authors": [
+    {
+      "name": "Dennis Snijder",
+      "email": "Dennis@Snijder.io",
+      "homepage": "https://github.com/dennissnijder",
+      "role": "Developer"
+    },
+    {
+      "name": "Robert-Jan Keizer",
+      "email": "robertjankeizer@gmail.com",
+      "homepage": "https://github.com/keizerdev",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "silex/silex": "^2.0",
+    "twig/twig": "~1.0",
+    "symfony/security": "~2.7",
+    "doctrine/dbal": "~2.4",
+    "symfony/console": "~2.3",
+    "snijder/bunq-api-client": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "BunqWeb\\": "src/BunqWeb/"
+    }
+  }
+}
